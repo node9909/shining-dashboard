@@ -1,0 +1,36 @@
+.overlay{
+    background: transparent;
+    color: $peach;
+    font-family: "Pixel Square";
+    letter-spacing: -0.0625em;
+    position: absolute;
+    line-height: 1;
+    vertical-align: sub;
+    width: 100%;
+    font-size: 14px;
+    top: calc(30% - 4px);
+    z-index: 2;
+    box-sizing: border-box;
+    padding: 1px 0 0 2px;
+    margin: 0;
+
+    &__container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-left: 0;
+        position: relative;
+    }
+
+    & > span {
+        text-align: center;
+        vertical-align: sub;
+    }
+
+    &--bordered {
+        background: $black;
+        border: 1px solid $peach;
+        border-radius: 1px;
+        width: auto;
+    }
+}

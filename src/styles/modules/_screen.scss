@@ -1,0 +1,105 @@
+.screen {
+  &__container {
+    height: 100%;
+    width: 100%;
+  }
+  &__background,
+  &__border,
+  &__display {
+    border-radius: 5px;
+  }
+
+  &__display {
+    & > .overlay__container {
+      margin-left: $base;
+    }
+  }
+
+  &__background {
+    background-color: $gray-m;
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+  }
+  &__border {
+    background-color: $gray-d;
+    height: calc(100% - 2rem);
+    width: calc(100% - 2rem);
+    padding: 1rem;
+    position: relative;
+
+    &:after,
+    &:before {
+      color: darken($gray-d, 10%);
+      content: "|";
+      position: absolute;
+      height: 0.75rem;
+      width: 0.75rem;
+      line-height: 0.75rem;
+      text-align: center;
+      background-color: $gray-m;
+      border: 1px solid $gray-d;
+      border-radius: 50%;
+      box-shadow: -1px -1px 1px 1px $gray-d;
+    }
+
+    &:before {
+      top: -0.75rem;
+      left: -0.75rem;
+    }
+    &:after {
+      right: -0.75rem;
+      bottom: -0.75rem;
+    }
+
+    &__edge {
+      &-group {
+        overflow-x: hidden;
+      }
+
+      &--top,
+      &--right,
+      &--bot,
+      &--left {
+        position: absolute;
+        z-index: 2;
+        background-color: $orange;
+        border: 0.2rem solid $gray-m;
+        box-shadow: -1px -1px 1px 1px $gray-d;
+        border-radius: 2px;
+      }
+
+      &--top,
+      &--bot {
+        height: 0.5rem;
+        width: 0.3rem;
+        @include border-edge(left, 5);
+      }
+      &--left,
+      &--right {
+        width: 0.5rem;
+        height: 0.3rem;
+        @include border-edge(top, 5);
+      }
+
+      &--top {
+        top: -0.5rem;
+      }
+      &--bot {
+        bottom: -0.5rem;
+      }
+      &--left {
+        left: -0.5rem;
+      }
+      &--right {
+        right: -0.5rem;
+      }
+    }
+  }
+  &__display {
+    background-color: $blue-l;
+    height: 100%;
+    width: 100%;
+    box-shadow: 0px 0px 10px 0px lighten($blue-l, 20%);
+  }
+}

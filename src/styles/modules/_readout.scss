@@ -1,0 +1,37 @@
+.readout{
+    color: $lavender-2;
+    line-height: 0.8;
+    font-size: 10px;
+    text-align: center;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 1px;
+    opacity: 0.3;
+
+    &-container {
+        border-color: #f4677a;
+        border-style: dashed;
+        border-width: 3px;
+        background: $blue-l;
+        overflow: hidden;
+        position: relative;
+        font-family: "VT323", monospace;
+        border-radius: 3px;
+
+        & > h1 {
+            margin: 0;
+            padding: 0;
+            text-align: left;
+            line-height: 0.8;
+            background: transparent;
+            position: absolute;
+            color: $lavender-1;
+        }
+    }
+    &__text {
+        font-size: 36px;
+        top: 5%;
+        padding: 0;
+    }
+}

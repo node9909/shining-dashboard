@@ -1,0 +1,169 @@
+.switch {
+    &__toggle {
+        height: 0.5rem;
+        width: 0.5rem;
+        border-style: solid;
+        border-color: $black;
+        border-width: 0.05rem 0.05rem 0.1rem 0.1rem;
+        background-color: $gray-d;
+        border-radius: 50%;
+        box-shadow: inset 0px 2px 1px 0px $gray-m;
+        position: relative;
+        top: 29%;
+        left: 25%;
+        box-sizing: border-box;
+
+        &__container {
+            height: 1.25rem;
+            width: 1.25rem;
+            border-style: solid;
+            border-color: $gray-m2;
+            border-width: 0.05rem 0.05rem 0.1rem 0.1rem;
+            background-color: $gray-l2;
+            border-radius: 50%;
+            box-shadow: inset 0px -3px 4px 1px darken($blue-d, 20%);
+        }
+
+        &::after {
+            height: 0.6rem;
+            width: 0.1rem;
+            background-color: $lavender-1;
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 2px;
+            border-radius: 25px;
+            box-shadow: inset 1px -1px 0px 0px rgb(117, 117, 117);
+            z-index: 2;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 2px;
+            height: 0.6rem;
+            width: 0.1rem;
+            background: transparent;
+            box-shadow: 1px 1px 2px 0px $black;
+        }
+        &.on {
+            border-width: 0.1rem 0.1rem 0.05rem 0.05rem;
+        }
+
+        &.on::after{
+            transform: translateY(-90%) scaleY(-1);
+            top: 2px;
+            left: 3px;
+        }
+        &.on::before {
+            transform: translateY(-90%) scaleY(-1);
+            top: 2px;
+            left: 3px;
+        }
+    }
+    &__emergency {
+        width: 50%;
+        position: relative;
+        top: 1px;
+        left: 25%;
+
+        &::before {
+            border: 1px dashed $gray-l;
+            pointer-events: none;
+        }
+
+        &::before,
+        &::after {
+                position: absolute;
+                content: '';
+                height: 100%;
+                width: 175%;
+                top: -1px;
+                left: -1px;
+        }
+        &::after {
+                opacity: 0.7;
+                top: -1px;
+                left: -1px;
+                background: repeating-linear-gradient(
+                    -45deg,
+                    #dfff9c,
+                    #dfff9c 4px,
+                    transparent 4px,
+                    transparent 8px,
+                );
+                border: 1px solid hsl(79, 100%, 30%);
+                border-radius: 2px;
+                transition: all 0.75s ease;
+                transform-origin: 100% 0%;
+                z-index: 2
+        }
+        &.uncovered::after{
+            transform: rotateY(-100deg);
+        }
+        &__container,
+        &__inner {
+            box-sizing: border-box;
+        }
+
+        &__container {
+            background: darken($gray-d, 2%);
+            padding: 0.1rem 0.5rem 0.1rem 0.1rem;
+            border-radius: 3px 7px 7px 3px;
+            width: 2.6rem;
+        }
+        &__inner {
+            border-radius: 5px;
+            margin: 1px;
+            padding: 0.1rem 0.5rem 0.1rem 0.1rem;
+            width: 2rem;
+            min-height: 1rem;
+            background: $gray-m;
+            position: relative;
+            box-shadow: 4px 1px 4px 0px lighten($gray-d, 10%);
+
+            &::before {
+                position: absolute;
+                content: '';
+                height: 80%;
+                width: 2px;
+                left: -2px;
+                box-shadow: 3px 0px 1px 1px $gray-m;
+                z-index: 2;
+                pointer-events: none;
+            }
+
+            &::after {
+                position: absolute;
+                content: '';
+                height: 100%;
+                width: 100%;
+                left: 0;
+                top: 0;
+                border-radius: 5px;
+                box-shadow: inset 0px 0px 1px 1px darken($gray-l, 10%);
+                pointer-events: none;
+            }
+        }
+
+        &__btn {
+            border-radius: 3px;
+            margin: 0;
+            box-sizing: border-box;
+            display: block;
+
+            & > .btn-key__inner {
+                padding: 0.25rem 0.4rem;
+                margin: -1px -2px -3px -1px;
+                transition: background-color 1.5s ease;
+            }
+        }
+
+        &:not(.uncovered){
+            .btn-key__inner {
+                background-color: darken($orange, 40%);
+            }
+        }
+    }
+}

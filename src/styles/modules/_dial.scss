@@ -1,0 +1,52 @@
+.dial {
+    height: 1.25rem;
+    width: 1.25rem;
+    border-style: solid;
+    border-color: $black;
+    border-width: 0.05rem 0.05rem 0.1rem 0.1rem;
+    background-color: $gray-d;
+    border-radius: 50%;
+    box-shadow: inset 0px 2px 1px 0px $gray-m;
+    position: relative;
+    margin: 2px;
+
+    &__panel {
+        display: flex;
+        flex-direction: column;
+        background-color: $gray-m;
+        width: 2rem;
+        align-items: center;
+    }
+
+    &::after {
+        position: absolute;
+        content: "";
+        background-color: $gray-l;
+        height: 3px;
+        width: 2px;
+        top: 2px;
+        box-shadow: 0px 2px 1px 0px $gray-l;
+    }
+    &--three::after {
+        top: 0.625rem;
+        right: 2px;
+        width: 3px;
+        height: 2px;
+        box-shadow: -2px 0px 1px 0px $gray-l;
+    }
+    
+    &--six::after {
+        top: 1rem;
+        width: 2px;
+        height: 3px;
+        box-shadow: 0px -2px 1px 0px $gray-l;
+    }
+    
+    &--nine::after {
+        top: 0.625rem;
+        left: 2px;
+        width: 3px;
+        height: 2px;
+        box-shadow: 2px 0px 1px 0px $gray-l;
+    }
+}

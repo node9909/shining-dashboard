@@ -1,0 +1,111 @@
+.btn-key {
+  border-color: $gray-d;
+  padding: 0;
+  font-weight: 700;
+  box-sizing: border-box;
+  overflow: visible;
+  border-style: solid;
+  border-width: 2px 4px 4px 4px;
+  border-radius: 1px;
+  display: inline-block;
+
+  &:focus {
+    outline: none;
+  }
+
+  &.l-tri {
+    border-width: 10px;
+    width: auto;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    position: relative;
+    border-radius: 7px 2px 7px 0;
+
+    &:after {
+      position: absolute;
+      content: "";
+      border: 11px solid $gray-d;
+      border-left-color: transparent;
+      border-bottom-color: transparent;
+      top: 0;
+      left: 0;
+    }
+
+    & > .btn-key__inner {
+      border-width: 10px;
+      width: auto;
+      padding: 0;
+      position: relative;
+      background-color: transparent;
+      box-sizing: border-box;
+      border: 14px solid $orange;
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+      overflow: hidden;
+      box-shadow: none;
+      margin: -8px -8px -4px -4px;
+      z-index: 2;
+
+      &:hover {
+        border-top-color: darken($orange, 10%);
+        border-right-color: darken($orange, 10%);
+      }
+    }
+  }
+
+  &__inner {
+    background-color: $orange;
+    &:hover {
+      background-color: #f8f87c;
+    }
+    border-width: 1px 2px 3px 2px;
+    border-radius: 2px;
+    padding: 0.5rem;
+    margin: -1px -2px;
+    box-shadow: 0px 1px 3px 1px lighten($gray-m, 10%);
+    &.narrow {
+      line-height: 0.75;
+      padding: 1px 0.5rem;
+    }
+    &.bl-text {
+      padding: 1rem 1rem 1px 1px;
+    }
+  }
+}
+
+.keyboard {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    overflow: hidden;
+    justify-content: flex-start;
+    border: 0.5rem solid $gray-m;
+    border-radius: 6px;
+  
+    &__container {
+        width: 100%;
+        border: 0.25rem solid $gray-d;
+        border-radius: 3px;
+        box-shadow: inset 0px 0px 0px 4px $gray-m2;
+    }
+  
+    &__row {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        background-color: $gray-d;
+        border-color: $gray-m;
+        border-style: solid;
+        border-width: 1px;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+  
+    &__row {
+      .btn-key {
+        box-shadow: -1px 0 1px 1px $black;
+        }
+    }
+}
+

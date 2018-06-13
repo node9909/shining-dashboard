@@ -1,0 +1,9 @@
+@mixin border-edge($edge-side, $n-of-edges) {
+    $n: $n-of-edges;
+    @while $n > 0 {
+        &.e-#{$n} {
+            #{$edge-side}: 1.5rem + (3rem * ($n - 1));
+        }
+        $n: $n - 1;
+    }
+}
