@@ -1,0 +1,30 @@
+.levels {
+  padding: 2px 1px 1px 1px;
+  background-color: #485172;
+  margin: 0 auto 0.25rem auto;
+
+  &__inner {
+    height: 100%;
+    width: 100%;
+    background-color: $gray-d;
+    position: relative;
+  }
+
+  &__bars {
+    position: absolute;
+    background: url(./assets/icons/bar-pattern.svg);
+    background-size: 2px;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+  }
+
+  &__fill {
+    position: absolute;
+    z-index: 1;
+    height: 50%;
+    width: 100%;
+    bottom: 0;
+    background-color: $orange;
+  }
+}

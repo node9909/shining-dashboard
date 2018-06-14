@@ -54,21 +54,47 @@
   }
 
   &__inner {
-    background-color: $orange;
-    &:hover {
-      background-color: #f8f87c;
-    }
     border-width: 1px 2px 3px 2px;
     border-radius: 2px;
     padding: 0.5rem;
     margin: -1px -2px;
     box-shadow: 0px 1px 3px 1px lighten($gray-m, 10%);
+    background-color: $blue-m;
+    position: relative;
+    
+    &::after {
+      position: absolute;
+      content: '';
+      width: calc(100% - 3px);
+      height: 25%;
+      left: 1px;
+      opacity: 0.4;
+      background-color: lighten($blue-l, 20%);
+    }
+
+    &:hover {
+      &::after {
+        opacity: 1;
+      }
+    }
+
     &.narrow {
       line-height: 0.75;
       padding: 1px 0.5rem;
     }
     &.bl-text {
       padding: 1rem 1rem 1px 1px;
+    }
+  }
+
+  &.backlit > &__inner {
+    background-color: $orange;
+    &:hover {
+      background-color: #f8f87c;
+    }
+
+    &::after {
+      display: none;
     }
   }
 }

@@ -1,13 +1,14 @@
 import React from "react";
 import { render } from "react-dom";
-import Readout from "./components/Readout";
-import BoltedScreen from "./components/BoltedScreen";
-import { Keyboard, Key } from "./components/Keyboard";
-import DialPanel from "./components/DialPanel";
-import Speedometer from "./components/Speedometer";
-import Overlay from "./components/Overlay";
-import { ToggleSwitch, EmergencySwitch } from "./components/Switches";
+// import Readout from "./components/Readout";
+// import BoltedScreen from "./components/BoltedScreen";
+// import { Keyboard, Key } from "./components/Keyboard";
+// import DialPanel from "./components/DialPanel";
+// import Speedometer from "./components/Speedometer";
+// import Overlay from "./components/Overlay";
+// import { ToggleSwitch, EmergencySwitch } from "./components/Switches";
 import './styles/index.css';
+import Equalizer from "./dashboards/Equalizer";
 
 const styles = {
   fontFamily: "sans-serif",
@@ -18,7 +19,13 @@ const styles = {
 
 const App = () => (
   <div>
-    <div style={styles}>
+    <Equalizer />
+  </div>
+);
+
+render(<App />, document.getElementById("root"));
+/*
+<div style={{ ...styles, width: '250px'}}>
       <BoltedScreen>
         <Overlay className="readout__text l-align pl-1" text="Loading..." />
         <Readout />
@@ -39,11 +46,8 @@ const App = () => (
     </div>
     <div style={styles}>
       <DialPanel n={4} />
-      <div style={{ marginRight: "0" }}>
+      <div style={{ marginRight: "0", width: '220px' }}>
         <Keyboard />
       </div>
     </div>
-  </div>
-);
-
-render(<App />, document.getElementById("root"));
+*/
