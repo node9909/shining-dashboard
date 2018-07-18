@@ -21,8 +21,9 @@
 .barcode {
   font-family: 'Code-39'; }
   .barcode.unreadable {
-    font-size: 5px;
-    font-weight: 800; }
+    font-size: 3px;
+    font-weight: 800;
+    letter-spacing: 1px; }
 
 .txt-blue-m {
   color: #5c6391; }
@@ -80,6 +81,9 @@
     width: 3px;
     height: 2px;
     box-shadow: 2px 0px 1px 0px #ac84a8; }
+
+.dashboard--dark {
+  display: inline-block; }
 
 .dashboard--dark {
   background-color: #252940; }
@@ -432,7 +436,7 @@
   width: 0.5rem;
   border-style: solid;
   border-color: #110c12;
-  border-width: 0.05rem 0.05rem 0.1rem 0.1rem;
+  border-width: 1px 1px 0.1rem 0.1rem;
   background-color: #1c1f30;
   border-radius: 50%;
   box-shadow: inset 0px 2px 1px 0px #2b304b;
@@ -471,15 +475,16 @@
     background: transparent;
     box-shadow: 1px 1px 2px 0px #110c12; }
   .switch__toggle.on {
-    border-width: 0.1rem 0.1rem 0.05rem 0.05rem; }
+    border-width: 0.1rem 0.1rem 1px 1px; }
   .switch__toggle.on::after {
     transform: translateY(-90%) scaleY(-1);
     top: 2px;
-    left: 3px; }
+    left: 2px; }
   .switch__toggle.on::before {
-    transform: translateY(-90%) scaleY(-1);
+    transform: translateY(-95%) scaleY(-1);
     top: 2px;
-    left: 3px; }
+    left: 2px;
+    box-shadow: -2px -2px 2px 0px #110c12; }
 
 .switch__emergency {
   width: 50%;
@@ -577,4 +582,5 @@
     height: 50%;
     width: 100%;
     bottom: 0;
-    background-color: #f5676d; }
+    background-color: #f5676d;
+    transition: height 0.75s ease; }

@@ -1,5 +1,9 @@
 .dashboard {
   &--dark {
+    display: inline-block;
+  }
+
+  &--dark {
     background-color: lighten($gray-d, 5%);
 
     .switch__toggle__container {

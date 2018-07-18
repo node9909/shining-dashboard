@@ -18,8 +18,9 @@
     font-family: 'Code-39';
 
     &.unreadable {
-        font-size: 5px;
+        font-size: 3px;
         font-weight: 800;
+        letter-spacing: 1px;
     }
 }
 

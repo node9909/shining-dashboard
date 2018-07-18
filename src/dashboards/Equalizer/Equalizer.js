@@ -29,11 +29,11 @@ Level.defaultProps = {
 };
 
 class Equalizer extends React.Component {
-  renderToggleLevels(key){
+  renderToggleLevels(key, level){
     return (
       <div className="flex__column">
-        <Level />
-        <ToggleSwitch/>
+        <Level percent={`${level}%`} />
+        <ToggleSwitch on/>
         <div
           className="barcode unreadable c-align txt-blue-m"
           style={{ marginTop: '0.15rem'}}
@@ -44,12 +44,15 @@ class Equalizer extends React.Component {
     )
   }
   render(){
+    const {
+      levels,
+    } = this.props;
     return (
-      <div style={{ padding: '0.5rem'}} className="dashboard--dark">
+      <div style={{ padding: '0.15rem'}} className="dashboard--dark">
         <div className="flex__column">
           <div className="flex__row">
             <React.Fragment>
-              {Array(3).fill().map((_, i) => this.renderToggleLevels(`0${i}${i*2}`))}
+              {levels.map((level, i) => this.renderToggleLevels(`0${i}${i*2}`, level))}
             </React.Fragment>
           </div>
         </div>
@@ -57,5 +60,9 @@ class Equalizer extends React.Component {
     )
   }
 }
+
+Equalizer.defaultProps = {
+  levels: [40, 70, 10],
+};
 
 export default Equalizer;
